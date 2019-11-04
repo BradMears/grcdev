@@ -3,8 +3,9 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Sun Nov  3 21:21:45 2019
+# GNU Radio version: 3.7.13.5
 ##################################################
+
 
 if __name__ == '__main__':
     import ctypes
@@ -16,6 +17,8 @@ if __name__ == '__main__':
         except:
             print "Warning: failed to XInitThreads()"
 
+from gnuradio import analog
+from gnuradio import blocks
 from gnuradio import eng_notation
 from gnuradio import gr
 from gnuradio import wxgui
@@ -41,13 +44,15 @@ class top_block(grc_wxgui.top_block_gui):
         # Variables
         ##################################################
         self.samp_rate = samp_rate = 1e6
+        self.channel_freq = channel_freq = 92.9e6
+        self.center_freq = center_freq = 97.9e6
 
         ##################################################
         # Blocks
         ##################################################
-        self.wxgui_fftsink2_0 = fftsink2.fft_sink_c(
+        self.wxgui_fftsink2_0_0 = fftsink2.fft_sink_c(
         	self.GetWin(),
-        	baseband_freq=0,
+        	baseband_freq=channel_freq,
         	y_per_div=10,
         	y_divs=10,
         	ref_level=0,
@@ -55,7 +60,23 @@ class top_block(grc_wxgui.top_block_gui):
         	sample_rate=samp_rate,
         	fft_size=1024,
         	fft_rate=15,
-        	average=False,
+        	average=True,
+        	avg_alpha=None,
+        	title='FFT Plot',
+        	peak_hold=False,
+        )
+        self.Add(self.wxgui_fftsink2_0_0.win)
+        self.wxgui_fftsink2_0 = fftsink2.fft_sink_c(
+        	self.GetWin(),
+        	baseband_freq=center_freq,
+        	y_per_div=10,
+        	y_divs=10,
+        	ref_level=0,
+        	ref_scale=2.0,
+        	sample_rate=samp_rate,
+        	fft_size=1024,
+        	fft_rate=15,
+        	average=True,
         	avg_alpha=None,
         	title='FFT Plot',
         	peak_hold=False,
@@ -63,30 +84,56 @@ class top_block(grc_wxgui.top_block_gui):
         self.Add(self.wxgui_fftsink2_0.win)
         self.osmosdr_source_0 = osmosdr.source( args="numchan=" + str(1) + " " + '' )
         self.osmosdr_source_0.set_sample_rate(samp_rate)
-        self.osmosdr_source_0.set_center_freq(92.9e6, 0)
+        self.osmosdr_source_0.set_center_freq(center_freq, 0)
         self.osmosdr_source_0.set_freq_corr(0, 0)
         self.osmosdr_source_0.set_dc_offset_mode(0, 0)
         self.osmosdr_source_0.set_iq_balance_mode(0, 0)
         self.osmosdr_source_0.set_gain_mode(False, 0)
-        self.osmosdr_source_0.set_gain(10, 0)
+        self.osmosdr_source_0.set_gain(0, 0)
         self.osmosdr_source_0.set_if_gain(20, 0)
         self.osmosdr_source_0.set_bb_gain(20, 0)
         self.osmosdr_source_0.set_antenna('', 0)
         self.osmosdr_source_0.set_bandwidth(0, 0)
-          
+
+        self.blocks_multiply_xx_0 = blocks.multiply_vcc(1)
+        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, center_freq-channel_freq, 1, 0)
+
+
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.osmosdr_source_0, 0), (self.wxgui_fftsink2_0, 0))    
+        self.connect((self.analog_sig_source_x_0, 0), (self.blocks_multiply_xx_0, 1))
+        self.connect((self.blocks_multiply_xx_0, 0), (self.wxgui_fftsink2_0_0, 0))
+        self.connect((self.osmosdr_source_0, 0), (self.blocks_multiply_xx_0, 0))
+        self.connect((self.osmosdr_source_0, 0), (self.wxgui_fftsink2_0, 0))
 
     def get_samp_rate(self):
         return self.samp_rate
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
+        self.wxgui_fftsink2_0_0.set_sample_rate(self.samp_rate)
         self.wxgui_fftsink2_0.set_sample_rate(self.samp_rate)
         self.osmosdr_source_0.set_sample_rate(self.samp_rate)
+        self.analog_sig_source_x_0.set_sampling_freq(self.samp_rate)
+
+    def get_channel_freq(self):
+        return self.channel_freq
+
+    def set_channel_freq(self, channel_freq):
+        self.channel_freq = channel_freq
+        self.wxgui_fftsink2_0_0.set_baseband_freq(self.channel_freq)
+        self.analog_sig_source_x_0.set_frequency(self.center_freq-self.channel_freq)
+
+    def get_center_freq(self):
+        return self.center_freq
+
+    def set_center_freq(self, center_freq):
+        self.center_freq = center_freq
+        self.wxgui_fftsink2_0.set_baseband_freq(self.center_freq)
+        self.osmosdr_source_0.set_center_freq(self.center_freq, 0)
+        self.analog_sig_source_x_0.set_frequency(self.center_freq-self.channel_freq)
 
 
 def main(top_block_cls=top_block, options=None):
