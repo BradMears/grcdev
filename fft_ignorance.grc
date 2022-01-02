@@ -18,7 +18,9 @@
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>This flowgraph is a starting point for adding in my 
+own custom python blocks. It is also me just experimenting
+with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>description</key>
@@ -151,7 +153,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(96, 108)</value>
+      <value>(440, 28)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -226,7 +228,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(64, 236)</value>
+      <value>(32, 228)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -281,7 +283,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(888, 220)</value>
+      <value>(856, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -324,7 +326,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(896, 372)</value>
+      <value>(864, 364)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -375,7 +377,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 220)</value>
+      <value>(416, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -426,7 +428,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 268)</value>
+      <value>(224, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -489,7 +491,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(640, 188)</value>
+      <value>(608, 180)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -560,7 +562,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 316)</value>
+      <value>(416, 308)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -651,7 +653,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1096, 324)</value>
+      <value>(1064, 316)</value>
     </param>
     <param>
       <key>gui_hint</key>
