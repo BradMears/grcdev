@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.11'?>
+<?grc format='1' created='3.7.13'?>
 <flow_graph>
   <timestamp>Sun Feb  9 19:02:48 2020</timestamp>
   <block>
@@ -10,7 +10,7 @@
     </param>
     <param>
       <key>window_size</key>
-      <value></value>
+      <value>1800,1000</value>
     </param>
     <param>
       <key>category</key>
@@ -75,12 +75,20 @@ with throttle &amp; Stream to Vector.</value>
       <value>True</value>
     </param>
     <param>
+      <key>sizing_mode</key>
+      <value>fixed</value>
+    </param>
+    <param>
       <key>thread_safe_setters</key>
       <value></value>
     </param>
     <param>
       <key>title</key>
       <value></value>
+    </param>
+    <param>
+      <key>placement</key>
+      <value>(0,0)</value>
     </param>
   </block>
   <block>
@@ -95,7 +103,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 36)</value>
+      <value>(896, 40)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -122,7 +130,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(752, 36)</value>
+      <value>(1072, 40)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -149,7 +157,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(296, 44)</value>
+      <value>(400, 40)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -176,7 +184,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(192, 44)</value>
+      <value>(232, 40)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -207,7 +215,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 28)</value>
+      <value>(608, 32)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -282,7 +290,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(32, 228)</value>
+      <value>(32, 312)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -333,11 +341,11 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1016, 124)</value>
+      <value>(1272, 204)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -376,11 +384,11 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(864, 364)</value>
+      <value>(1240, 472)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -431,7 +439,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 212)</value>
+      <value>(576, 292)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -463,6 +471,57 @@ with throttle &amp; Stream to Vector.</value>
     </param>
   </block>
   <block>
+    <key>blocks_stream_to_vector</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(928, 524)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_stream_to_vector_1</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_items</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1024</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_throttle</key>
     <param>
       <key>alias</key>
@@ -482,7 +541,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 260)</value>
+      <value>(312, 340)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -544,7 +603,7 @@ def magic_function(a):
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(376, 496)</value>
+      <value>(536, 576)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -575,7 +634,7 @@ def magic_function(a):
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(840, 456)</value>
+      <value>(712, 576)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -614,7 +673,7 @@ def magic_function(a):
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(624, 148)</value>
+      <value>(880, 232)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -694,26 +753,29 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     def work(self, input_items, output_items):
         """Starting point for writing a custom FFT block."""
 
-        # input_items is an array of an array of blocks. So far I've never 
-        # seen len(input_items) be anything other than 1 but it seems possible
-        # that it can be greater than that.
-        assert len(input_items) &gt; 0
+        global ctr
+        ctr +=1
 
-        # I've seen len(input_items[0]) be 4 and 7. I'm guessing that grc simply
-        # bundles these up depending on how much memory is available so you shouldn't
-        # make any assumptions about how many blocks you'll get in one call.
+        # input_items is a list of ndarray of ndarray of complex64
+        # output_items has the same shape
+        assert type(input_items) == list
+        assert type(input_items[0]) == np.ndarray
+        assert type(input_items[0][0]) == np.ndarray
+        assert type(input_items[0][0][0]) == np.complex64
+        assert input_items[0].shape == output_items[0].shape
+        assert len(input_items) &gt; 0
         assert len(input_items[0]) &gt; 0
-        
-        # I'm pretty sure that each individual block better be the specified size
         assert len(input_items[0][0]) == self.fft_size
-        
-        #output_items[0][:] = input_items[0] # * 5
-        output_items = input_items
-        print 'processing set'
-        for item in output_items:
-            print 'Length of item =',len(item)
-        
-        
+
+        for ii,_ in enumerate(input_items):
+            assert len(output_items[ii]) == len(input_items[ii])
+            for jj,_ in enumerate(input_items[ii]):
+                assert len(input_items[ii][jj]) == self.fft_size
+                assert len(output_items[ii][jj]) == self.fft_size
+                for kk,val in enumerate(input_items[ii][jj]):
+                    assert type(val) == np.complex64
+                    output_items[ii][jj][kk] = 123 + 456j #val
+
         return len(output_items)
         
 </value>
@@ -732,7 +794,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(664, 340)</value>
+      <value>(920, 420)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -779,7 +841,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 308)</value>
+      <value>(576, 388)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -843,6 +905,105 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
   </block>
   <block>
+    <key>qtgui_sink_x</key>
+    <param>
+      <key>bw</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>fc</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>freqchangevar</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>fftsize</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1224, 692)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>qtgui_sink_x_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>name</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>plotconst</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>plotfreq</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>plottime</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>plotwaterfall</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>showports</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>showrf</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>rate</key>
+      <value>10</value>
+    </param>
+    <param>
+      <key>wintype</key>
+      <value>firdes.WIN_BLACKMAN_hARRIS</value>
+    </param>
+  </block>
+  <block>
     <key>qtgui_vector_sink_f</key>
     <param>
       <key>autoscale</key>
@@ -866,11 +1027,11 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1064, 316)</value>
+      <value>(1512, 408)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1144,6 +1305,12 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_stream_to_vector_1</source_block_id>
+    <sink_block_id>qtgui_sink_x_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_throttle_0_0</source_block_id>
     <sink_block_id>blocks_stream_to_vector_0</sink_block_id>
     <source_key>0</source_key>
@@ -1164,6 +1331,18 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
   <connection>
     <source_block_id>mock_fft</source_block_id>
     <sink_block_id>blocks_complex_to_mag_squared_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>mock_fft</source_block_id>
+    <sink_block_id>blocks_stream_to_vector_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>mock_fft</source_block_id>
+    <sink_block_id>qtgui_sink_x_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

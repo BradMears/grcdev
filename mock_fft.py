@@ -31,25 +31,28 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     def work(self, input_items, output_items):
         """Starting point for writing a custom FFT block."""
 
-        # input_items is an array of an array of blocks. So far I've never 
-        # seen len(input_items) be anything other than 1 but it seems possible
-        # that it can be greater than that.
-        assert len(input_items) > 0
+        global ctr
+        ctr +=1
 
-        # I've seen len(input_items[0]) be 4 and 7. I'm guessing that grc simply
-        # bundles these up depending on how much memory is available so you shouldn't
-        # make any assumptions about how many blocks you'll get in one call.
+        # input_items is a list of ndarray of ndarray of complex64
+        # output_items has the same shape
+        assert type(input_items) == list
+        assert type(input_items[0]) == np.ndarray
+        assert type(input_items[0][0]) == np.ndarray
+        assert type(input_items[0][0][0]) == np.complex64
+        assert input_items[0].shape == output_items[0].shape
+        assert len(input_items) > 0
         assert len(input_items[0]) > 0
-        
-        # I'm pretty sure that each individual block better be the specified size
         assert len(input_items[0][0]) == self.fft_size
-        
-        #output_items[0][:] = input_items[0] # * 5
-        output_items = input_items
-        print 'processing set'
-        for item in output_items:
-            print 'Length of item =',len(item)
-        
-        
+
+        for ii,_ in enumerate(input_items):
+            assert len(output_items[ii]) == len(input_items[ii])
+            for jj,_ in enumerate(input_items[ii]):
+                assert len(input_items[ii][jj]) == self.fft_size
+                assert len(output_items[ii][jj]) == self.fft_size
+                for kk,val in enumerate(input_items[ii][jj]):
+                    assert type(val) == np.complex64
+                    output_items[ii][jj][kk] = 123 + 456j #val
+
         return len(output_items)
         
