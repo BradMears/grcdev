@@ -95,6 +95,60 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
+      <value>(632, 36)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dummy_0</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>brads_python_module.MAGIC_NUMBER</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(752, 36)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dummy_1</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>brads_python_module.magic_function(-1)</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
       <value>(296, 44)</value>
     </param>
     <param>
@@ -283,7 +337,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(856, 212)</value>
+      <value>(1016, 124)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -464,6 +518,75 @@ with throttle &amp; Stream to Vector.</value>
     </param>
   </block>
   <block>
+    <key>epy_module</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>source_code</key>
+      <value>'''This is a very useless module because it doesn't do anything useful.'''
+
+MAGIC_NUMBER=1234.56
+
+def magic_function(a):
+    return a*3
+
+</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(376, 496)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>brads_python_module</value>
+    </param>
+  </block>
+  <block>
+    <key>epy_module</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>source_code</key>
+      <value># this module will be imported in the into your flowgraph</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(840, 456)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>epy_module_0</value>
+    </param>
+  </block>
+  <block>
     <key>fft_vxx</key>
     <param>
       <key>alias</key>
@@ -479,7 +602,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>fft_size</key>
@@ -491,7 +614,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(608, 180)</value>
+      <value>(624, 148)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -524,6 +647,100 @@ with throttle &amp; Stream to Vector.</value>
     <param>
       <key>window</key>
       <value>window.blackmanharris(1024)</value>
+    </param>
+  </block>
+  <block>
+    <key>epy_block</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_io_cache</key>
+      <value>('Mock FFT', 'blk', [('fft_size', '1024')], [('0', 'complex', 1024)], [('0', 'complex', 1024)], 'Embedded Python Block to be used in places where FFT can be used.', ['fft_size'])</value>
+    </param>
+    <param>
+      <key>_source_code</key>
+      <value>"""
+Embedded Python Blocks:
+
+Each time this file is saved, GRC will instantiate the first class it finds
+to get ports and parameters of your block. The arguments to __init__  will
+be the parameters. All of them are required to have default values!
+"""
+
+import numpy as np
+from gnuradio import gr
+
+ctr = 0
+
+class blk(gr.sync_block):  # other base classes are basic_block, decim_block, interp_block
+    """Embedded Python Block to be used in places where FFT can be used."""
+
+    def __init__(self, fft_size=1024):  # only default arguments here
+        """arguments to this function show up as parameters in GRC"""
+        gr.sync_block.__init__(
+            self,
+            name='Mock FFT',   # will show up in GRC
+            #in_sig=[np.complex64],
+            #out_sig=[np.complex64]
+            in_sig=[(np.complex64,fft_size)],
+            out_sig=[(np.complex64,fft_size)]
+        )
+        # if an attribute with the same name as a parameter is found,
+        # a callback is registered (properties work, too).
+        self.fft_size = fft_size
+
+    def work(self, input_items, output_items):
+        """Starting point for writing a custom FFT block."""
+
+        # input_items is an array of an array of blocks. So far I've never 
+        # seen len(input_items) be anything other than 1 but it seems possible
+        # that it can be greater than that.
+        assert len(input_items) &gt; 0
+
+        # I've seen len(input_items[0]) be 4 and 7. I'm guessing that grc simply
+        # bundles these up depending on how much memory is available so you shouldn't
+        # make any assumptions about how many blocks you'll get in one call.
+        assert len(input_items[0]) &gt; 0
+        
+        # I'm pretty sure that each individual block better be the specified size
+        assert len(input_items[0][0]) == self.fft_size
+        
+        #output_items[0][:] = input_items[0] # * 5
+        output_items = input_items
+        print 'processing set'
+        for item in output_items:
+            print 'Length of item =',len(item)
+        
+        
+        return len(output_items)
+        
+</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>fft_size</key>
+      <value>1024</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(664, 340)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>mock_fft</value>
     </param>
   </block>
   <block>
@@ -921,6 +1138,12 @@ with throttle &amp; Stream to Vector.</value>
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_stream_to_vector_0</source_block_id>
+    <sink_block_id>mock_fft</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_throttle_0_0</source_block_id>
     <sink_block_id>blocks_stream_to_vector_0</sink_block_id>
     <source_key>0</source_key>
@@ -934,6 +1157,12 @@ with throttle &amp; Stream to Vector.</value>
   </connection>
   <connection>
     <source_block_id>fft_vxx_0</source_block_id>
+    <sink_block_id>blocks_complex_to_mag_squared_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>mock_fft</source_block_id>
     <sink_block_id>blocks_complex_to_mag_squared_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
