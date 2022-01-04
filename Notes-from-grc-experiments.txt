@@ -3,5 +3,5 @@ Notes taken while trying to use the NVIDIA GPU from GNU Radio Companion (Dec 202
 - The version of GNU Radio Companion that is installed by apt is 3.7.11. This version is restricted to using python 2.
 - To use python 3, you must upgrade to grc 3.8
 - Using python 2 is okay since the EOSS tracker uses python 2.
-- The Jetson's Jetpack comes with cupy for python 2 so I think I can do what I'm trying to do.
+- cupy does not support python 2.7. This is a roadblock for us
 

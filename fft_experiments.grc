@@ -95,7 +95,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(896, 40)</value>
+      <value>(552, 36)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -103,38 +103,11 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>id</key>
-      <value>dummy_0</value>
+      <value>fft_block_size</value>
     </param>
     <param>
       <key>value</key>
-      <value>brads_python_module.MAGIC_NUMBER</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1072, 40)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dummy_1</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>brads_python_module.magic_function(-1)</value>
+      <value>1024</value>
     </param>
   </block>
   <block>
@@ -207,7 +180,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(608, 32)</value>
+      <value>(768, 12)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -282,7 +255,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(32, 312)</value>
+      <value>(32, 308)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -333,11 +306,11 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1016, 544)</value>
+      <value>(928, 488)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -357,7 +330,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>vlen</key>
-      <value>1024</value>
+      <value>fft_block_size</value>
     </param>
   </block>
   <block>
@@ -376,7 +349,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -400,7 +373,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>vlen</key>
-      <value>1024</value>
+      <value>fft_block_size</value>
     </param>
   </block>
   <block>
@@ -419,11 +392,11 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1056, 356)</value>
+      <value>(1080, 356)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -443,7 +416,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>vlen</key>
-      <value>1024</value>
+      <value>fft_block_size</value>
     </param>
     <param>
       <key>k</key>
@@ -498,7 +471,7 @@ with throttle &amp; Stream to Vector.</value>
     </param>
     <param>
       <key>num_items</key>
-      <value>1024</value>
+      <value>fft_block_size</value>
     </param>
     <param>
       <key>vlen</key>
@@ -561,75 +534,6 @@ with throttle &amp; Stream to Vector.</value>
     </param>
   </block>
   <block>
-    <key>epy_module</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>source_code</key>
-      <value>'''This is a very useless module because it doesn't do anything useful.'''
-
-MAGIC_NUMBER=1234.56
-
-def magic_function(a):
-    return a*3
-
-</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(384, 516)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>brads_python_module</value>
-    </param>
-  </block>
-  <block>
-    <key>epy_module</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>source_code</key>
-      <value># this module will be imported in the into your flowgraph</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(528, 516)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>epy_module_0</value>
-    </param>
-  </block>
-  <block>
     <key>fft_vxx</key>
     <param>
       <key>alias</key>
@@ -649,7 +553,7 @@ def magic_function(a):
     </param>
     <param>
       <key>fft_size</key>
-      <value>1024</value>
+      <value>fft_block_size</value>
     </param>
     <param>
       <key>forward</key>
@@ -685,7 +589,7 @@ def magic_function(a):
     </param>
     <param>
       <key>shift</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>window</key>
@@ -715,11 +619,12 @@ be the parameters. All of them are required to have default values!
 import numpy as np
 from gnuradio import gr
 
-ctr = 0
-
 class blk(gr.sync_block):  # other base classes are basic_block, decim_block, interp_block
     """Embedded Python Block to be used in places where FFT can be used."""
 
+    # TODO - find out why the default value of fft_size causes problems when I set the 
+    # flowgraph variable fft_block_size to something different. The actual value passed 
+    # to this ctor should take precedence.
     def __init__(self, fft_size=1024):  # only default arguments here
         """arguments to this function show up as parameters in GRC"""
         gr.sync_block.__init__(
@@ -737,9 +642,6 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     def work(self, input_items, output_items):
         """Starting point for writing a custom FFT block."""
 
-        global ctr
-        ctr +=1
-
         # input_items is a list of ndarray of ndarray of complex64
         # output_items has the same shape
         assert type(input_items) == list
@@ -751,22 +653,12 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
         assert len(input_items[0]) &gt; 0
         assert len(input_items[0][0]) == self.fft_size
 
-        # list format: (current value, initial value, max value, increment)
-        x = [-4, -4, 4, 1]
-        y = [-12, -12, 8, 1]
-        
         for ii,_ in enumerate(input_items):
             assert len(output_items[ii]) == len(input_items[ii])
             for jj,_ in enumerate(input_items[ii]):
                 assert len(input_items[ii][jj]) == self.fft_size
                 assert len(output_items[ii][jj]) == self.fft_size
-                for kk,val in enumerate(input_items[ii][jj]):
-                    assert type(val) == np.complex64
-                    output_items[ii][jj][kk] = x[0] + y[0] * 1j #val
-                    x[0] += x[3]
-                    y[0] += y[3]
-                    if x[0] &gt; x[2]: x[0] = x[1]
-                    if y[0] &gt; y[2]: y[0] = y[1]
+                output_items[ii][jj] = np.fft.fft(input_items[ii][jj])
 
         return len(output_items)
         
@@ -782,7 +674,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>fft_size</key>
-      <value>1024</value>
+      <value>fft_block_size</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -829,11 +721,11 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>fftsize</key>
-      <value>1024*8</value>
+      <value>1024</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(456, 388)</value>
+      <value>(440, 388)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -920,7 +812,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1132,7 +1024,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>vlen</key>
-      <value>1024</value>
+      <value>fft_block_size</value>
     </param>
     <param>
       <key>x_axis_label</key>
@@ -1156,7 +1048,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>ymin</key>
-      <value>-140</value>
+      <value>-20</value>
     </param>
     <param>
       <key>y_axis_label</key>
@@ -1191,11 +1083,11 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1248, 500)</value>
+      <value>(1120, 444)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1403,7 +1295,7 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     </param>
     <param>
       <key>vlen</key>
-      <value>1024</value>
+      <value>fft_block_size</value>
     </param>
     <param>
       <key>x_axis_label</key>
