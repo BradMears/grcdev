@@ -2,6 +2,4 @@ examples
 GNURadio-FM-Receiver-FM_RX_1a
 *.dat
 *.pyc
-gr-radar
-gr-scan
-
+filesink
